@@ -3,14 +3,16 @@ import { ShowPassenger } from './components/ShowPassenger';
 import './App.scss';
 
 const _emptyPassenger = {
+	id: 0,
 	name: '',
 	airport: 'Berlin',
 	tripStartDate: '',
 	tripEndDate: ''
 };
 
-const renamePassengers = (passengers) => {
+const fillDataIntoPassengers = (passengers) => {
 	passengers.forEach((passenger, index) => {
+		passenger.id = index;
 		passenger.name = `Passenger #${index + 1}`;
 	});
 	return passengers;
@@ -21,11 +23,11 @@ function App() {
 
 	useEffect(() => {
 		const _passengers = [{ ..._emptyPassenger }, { ..._emptyPassenger }];
-		setPassengers([...renamePassengers(_passengers)]);
+		setPassengers([...fillDataIntoPassengers(_passengers)]);
 	}, []);
 
 	const handlePassengerChange = (passenger) => {
-		passengers[0] = passenger;
+		passengers[passenger.index] = passenger;
 		setPassengers([...passengers]);
 	}
 
