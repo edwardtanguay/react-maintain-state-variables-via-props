@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { ShowPassenger } from './components/ShowPassenger';
 import './App.scss';
 
 const _emptyPassenger = {
@@ -20,8 +21,7 @@ function App() {
 
 	useEffect(() => {
 		const _passengers = [{ ..._emptyPassenger }, { ..._emptyPassenger }];
-		console.log(passengers);
-		setPassengers([...passengers]);
+		setPassengers([...renamePassengers(_passengers)]);
 	}, []);
 
 
@@ -30,7 +30,7 @@ function App() {
 			<h1>{passengers.length} Passengers:</h1>
 			{passengers.map((passenger, index) => {
 				return (
-					<div key={index}>{passenger.name}</div>
+					<ShowPassenger key={index} passenger={passenger}/>
 				)
 			})}
 		</div>
