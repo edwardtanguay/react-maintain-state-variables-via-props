@@ -4,7 +4,7 @@ import './App.scss';
 
 const _emptyPassenger = {
 	name: '',
-	airport: '',
+	airport: 'Berlin',
 	tripStartDate: '',
 	tripEndDate: ''
 };
@@ -24,15 +24,22 @@ function App() {
 		setPassengers([...renamePassengers(_passengers)]);
 	}, []);
 
+	const handlePassengerChange = (passenger) => {
+		passengers[0] = passenger;
+		setPassengers([...passengers]);
+	}
 
 	return (
 		<div className="App">
 			<h1>{passengers.length} Passengers:</h1>
 			{passengers.map((passenger, index) => {
 				return (
-					<ShowPassenger key={index} passenger={passenger}/>
+					<ShowPassenger key={index} passenger={passenger} handlePassengerChange={handlePassengerChange} />
 				)
 			})}
+			<pre>
+				{JSON.stringify(passengers, null, 2)}
+			</pre>
 		</div>
 	);
 }

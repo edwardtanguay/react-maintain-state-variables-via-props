@@ -1,6 +1,10 @@
+import { useState } from 'react';
+
 const _airports = ['Berlin', 'Hamburg', 'Munich', 'Hannover'];
 
-export const AirportControl = ({ label, airport }) => {
+export const AirportControl = ({ label, airport, handleChangeAirport }) => {
+	// const [airport, setAirport] = useState(_airport);
+
 	return (
 		<div className="control_airport">
 			<label>
@@ -10,7 +14,7 @@ export const AirportControl = ({ label, airport }) => {
 				placeholder="Choose an airport"
 				list="opts"
 				value={airport}
-			// onChange={(e) => handleAirport(e.target.value)}
+			onChange={(e) => handleChangeAirport(e.target.value)}
 			/>
 			<datalist id="opts">
 				{_airports.map((_airport, index) => (
