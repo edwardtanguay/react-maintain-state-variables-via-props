@@ -1,7 +1,7 @@
 $form_label_width: 60px;
 
 body {
-	padding: 20px;
+	padding: 40px;
 	font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
 	.App {
 		font-size: 1.6rem;
@@ -26,6 +26,9 @@ body {
 			list-style-type: disc;
 			margin: 0 0 0 30px;
 		}
+		.content {
+			display: flex;
+		}
 		.control_showPassenger {
 			background: #eee;
 			max-width: 500px;
@@ -42,6 +45,12 @@ body {
 					font-size: 1.1rem;
 					color: #555;
 					cursor: pointer;
+					margin-right: 10px;
+				}
+				.iconDisabled {
+					font-size: 1.1rem;
+					color: #bbb;
+					margin-right: 10px;
 				}
 				.icon:hover {
 					color: #222;

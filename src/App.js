@@ -48,14 +48,18 @@ function App() {
 	return (
 		<div className="App">
 			<h1>{passengers.length} Passengers:</h1>
-			{passengers.map((passenger, index) => {
-				return (
-					<ShowPassenger key={index} passenger={passenger} handlePassengerChange={handlePassengerChange} handlePassengerAdd={handlePassengerAdd} handlePassengerDelete={handlePassengerDelete} />
-				)
-			})}
-			<pre>
-				{JSON.stringify(passengers, null, 2)}
-			</pre>
+			<div className="content">
+				<div className="passengers">
+					{passengers.map((passenger, index) => {
+						return (
+							<ShowPassenger key={index} passenger={passenger} handlePassengerChange={handlePassengerChange} handlePassengerAdd={handlePassengerAdd} handlePassengerDelete={handlePassengerDelete} canDelete={passengers.length >= 2} />
+						)
+					})}
+				</div>
+				<pre>
+					{JSON.stringify(passengers, null, 2)}
+				</pre>
+			</div>
 		</div>
 	);
 }
