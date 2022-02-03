@@ -41,6 +41,10 @@ body {
 				.icon {
 					font-size: 1.1rem;
 					color: #555;
+					cursor: pointer;
+				}
+				.icon:hover {
+					color: #222;
 				}
 			}
 			h2 {

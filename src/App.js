@@ -32,12 +32,18 @@ function App() {
 		setPassengers([...passengers]);
 	}
 
+	const handlePassengerAdd = () => {
+		const _passengers = [...passengers, {..._emptyPassenger }];
+		fillDataIntoPassengers(_passengers);
+		setPassengers([..._passengers]);
+	}
+
 	return (
 		<div className="App">
 			<h1>{passengers.length} Passengers:</h1>
 			{passengers.map((passenger, index) => {
 				return (
-					<ShowPassenger key={index} passenger={passenger} handlePassengerChange={handlePassengerChange} />
+					<ShowPassenger key={index} passenger={passenger} handlePassengerChange={handlePassengerChange} handlePassengerAdd={handlePassengerAdd} />
 				)
 			})}
 			<pre>

@@ -4,7 +4,7 @@ import { FormControlDate } from './FormControlDate';
 import { RiDeleteBin6Line } from 'react-icons/ri';
 import { BsPlusLg } from 'react-icons/bs';
 
-export const ShowPassenger = ({ passenger, handlePassengerChange }) => {
+export const ShowPassenger = ({ passenger, handlePassengerChange, handlePassengerAdd }) => {
 
 	const handleChangeName = (name) => {
 		passenger.name = name;
@@ -30,7 +30,7 @@ export const ShowPassenger = ({ passenger, handlePassengerChange }) => {
 		<div className="control_showPassenger">
 			<div className="header">
 				<h2>{passenger.genericTitle}</h2>
-				<BsPlusLg className="icon" />
+				<BsPlusLg className="icon" onClick={handlePassengerAdd} />
 				<RiDeleteBin6Line className="icon" />
 			</div>
 			<FormControlText label="Name" text={passenger.name} handleChangeText={handleChangeName} />
