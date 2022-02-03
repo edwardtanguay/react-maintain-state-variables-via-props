@@ -14,8 +14,13 @@ export const ShowPassenger = ({ passenger, handlePassengerChange }) => {
 		handlePassengerChange(passenger);
 	};
 
-	const handleChangeDate = (start) => {
+	const handleChangeStart = (start) => {
 		passenger.start = start;
+		handlePassengerChange(passenger);
+	}
+
+	const handleChangeEnd = (end) => {
+		passenger.end = end;
 		handlePassengerChange(passenger);
 	}
 
@@ -24,7 +29,8 @@ export const ShowPassenger = ({ passenger, handlePassengerChange }) => {
 			<h2>{passenger.genericTitle}</h2>
 			<FormControlText label="Name" text={passenger.name} handleChangeText={handleChangeName} />
 			<FormControlAirport label="From" airport={passenger.airport} handleChangeAirport={handleChangeAirport} />
-			<FormControlDate label="Start" date={passenger.start} handleChangeDate={handleChangeDate} />
+			<FormControlDate label="Start" date={passenger.start} handleChangeDate={handleChangeStart} />
+			<FormControlDate label="End" date={passenger.end} handleChangeDate={handleChangeEnd} />
 		</div>
 	)
 }
