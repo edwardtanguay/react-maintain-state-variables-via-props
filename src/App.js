@@ -27,8 +27,7 @@ function App() {
 		setPassengers([...fillDataIntoPassengers(_passengers)]);
 	}, []);
 
-	const handlePassengerChange = (passenger) => {
-		passengers[passenger.index] = passenger;
+	const handlePassengerChange = () => {
 		setPassengers([...passengers]);
 	};
 

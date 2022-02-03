@@ -8,7 +8,7 @@ export const ShowPassenger = ({ passenger, handlePassengerChange, handlePassenge
 
 	const handleChangeField = (key, value) => {
 		passenger[key] = value;
-		handlePassengerChange(passenger);
+		handlePassengerChange();
 	}
 
 	return (
