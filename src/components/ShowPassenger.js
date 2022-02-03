@@ -6,23 +6,8 @@ import { BsPlusLg } from 'react-icons/bs';
 
 export const ShowPassenger = ({ passenger, handlePassengerChange, handlePassengerAdd, handlePassengerDelete, canDelete }) => {
 
-	const handleChangeName = (name) => {
-		passenger.name = name;
-		handlePassengerChange(passenger);
-	}
-
-	const handleChangeAirport = (airport) => {
-		passenger.airport = airport;
-		handlePassengerChange(passenger);
-	};
-
-	const handleChangeStart = (start) => {
-		passenger.start = start;
-		handlePassengerChange(passenger);
-	}
-
-	const handleChangeEnd = (end) => {
-		passenger.end = end;
+	const handleChangeField = (key, value) => {
+		passenger[key] = value;
 		handlePassengerChange(passenger);
 	}
 
@@ -38,10 +23,10 @@ export const ShowPassenger = ({ passenger, handlePassengerChange, handlePassenge
 				)}
 				<BsPlusLg className="icon" onClick={handlePassengerAdd} />
 			</div>
-			<FormControlText label="Name" text={passenger.name} handleChangeText={handleChangeName} />
-			<FormControlAirport label="From" airport={passenger.airport} handleChangeAirport={handleChangeAirport} />
-			<FormControlDate label="Start" date={passenger.start} handleChangeDate={handleChangeStart} />
-			<FormControlDate label="End" date={passenger.end} handleChangeDate={handleChangeEnd} />
+			<FormControlText label="Name" text={passenger.name} handleChangeField={handleChangeField} />
+			<FormControlAirport label="From" airport={passenger.airport} handleChangeField={handleChangeField} />
+			<FormControlDate label="Start" propertyName="start" date={passenger.start} handleChangeField={handleChangeField} />
+			<FormControlDate label="End" propertyName="end" date={passenger.end} handleChangeField={handleChangeField} />
 		</div>
 	)
 }
