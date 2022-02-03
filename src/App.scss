@@ -1,3 +1,5 @@
+$form_label_width: 60px;
+
 body {
 	padding: 20px;
 	font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
@@ -34,12 +36,29 @@ body {
 				padding: 0;
 				margin: 0 0 10px 0;
 			}
+			.control_text {
+				display: flex;
+				margin: 0 0 5px 0;
+				label {
+					margin: 0 5px 0 0;
+					font-size: 1.4rem;
+					color: #555;
+					width: $form_label_width;
+					&:after {
+						content: ":";
+					}
+				}
+				input {
+					font-size: 1rem;
+				}
+			}
 			.control_airport {
 				display: flex;
 				label {
 					margin: 0 5px 0 0;
 					font-size: 1.4rem;
 					color: #555;
+					width: $form_label_width;
 					&:after {
 						content: ":";
 					}
