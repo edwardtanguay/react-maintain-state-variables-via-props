@@ -1,4 +1,4 @@
-import { AirportControl } from './AirportControl';
+import { FormControlAirport } from './FormControlAirport';
 
 export const ShowPassenger = ({ passenger, handlePassengerChange }) => {
 	const handleChangeAirport = (airport) => {
@@ -9,7 +9,7 @@ export const ShowPassenger = ({ passenger, handlePassengerChange }) => {
 	return (
 		<div className="control_showPassenger">
 			<h2>{passenger.name}</h2>
-			<AirportControl label="From" airport={passenger.airport} handleChangeAirport={handleChangeAirport}/>
+			<FormControlAirport label="From" airport={passenger.airport} handleChangeAirport={handleChangeAirport}/>
 
 			
 		</div>
