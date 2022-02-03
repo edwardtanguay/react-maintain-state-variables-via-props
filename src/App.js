@@ -30,10 +30,17 @@ function App() {
 	const handlePassengerChange = (passenger) => {
 		passengers[passenger.index] = passenger;
 		setPassengers([...passengers]);
-	}
+	};
 
 	const handlePassengerAdd = () => {
-		const _passengers = [...passengers, {..._emptyPassenger }];
+		const _passengers = [...passengers, { ..._emptyPassenger }];
+		fillDataIntoPassengers(_passengers);
+		setPassengers([..._passengers]);
+	};
+
+	const handlePassengerDelete = (index) => {
+		const _passengers = [...passengers];
+		_passengers.splice(index, 1);
 		fillDataIntoPassengers(_passengers);
 		setPassengers([..._passengers]);
 	}
@@ -43,7 +50,7 @@ function App() {
 			<h1>{passengers.length} Passengers:</h1>
 			{passengers.map((passenger, index) => {
 				return (
-					<ShowPassenger key={index} passenger={passenger} handlePassengerChange={handlePassengerChange} handlePassengerAdd={handlePassengerAdd} />
+					<ShowPassenger key={index} passenger={passenger} handlePassengerChange={handlePassengerChange} handlePassengerAdd={handlePassengerAdd} handlePassengerDelete={handlePassengerDelete} />
 				)
 			})}
 			<pre>
