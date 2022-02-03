@@ -8,6 +8,7 @@ export const ShowPassenger = ({ passenger, handlePassengerChange }) => {
 		passenger.name = name;
 		handlePassengerChange(passenger);
 	}
+
 	const handleChangeAirport = (airport) => {
 		passenger.airport = airport;
 		handlePassengerChange(passenger);
