@@ -7,8 +7,8 @@ const _emptyPassenger = {
 	genericTitle: '',
 	name: '',
 	airport: 'Berlin',
-	tripStartDate: '',
-	tripEndDate: ''
+	start: '',
+	end: ''
 };
 
 const fillDataIntoPassengers = (passengers) => {
