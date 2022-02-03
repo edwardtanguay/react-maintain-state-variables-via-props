@@ -14,7 +14,7 @@ export const ShowPassenger = ({ passenger, handlePassengerChange }) => {
 
 	return (
 		<div className="control_showPassenger">
-			<h2>{passenger.name}</h2>
+			<h2>{passenger.genericTitle}</h2>
 			<FormControlText label="Name" text={passenger.name} handleChangeText={handleChangeName} />
 			<FormControlAirport label="From" airport={passenger.airport} handleChangeAirport={handleChangeAirport}/>
 

@@ -4,6 +4,7 @@ import './App.scss';
 
 const _emptyPassenger = {
 	id: 0,
+	genericTitle: '',
 	name: '',
 	airport: 'Berlin',
 	tripStartDate: '',
@@ -13,7 +14,7 @@ const _emptyPassenger = {
 const fillDataIntoPassengers = (passengers) => {
 	passengers.forEach((passenger, index) => {
 		passenger.id = index;
-		passenger.name = `Passenger #${index + 1}`;
+		passenger.genericTitle = `Passenger #${index + 1}`;
 	});
 	return passengers;
 }
