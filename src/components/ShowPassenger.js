@@ -1,6 +1,8 @@
 import { FormControlText } from './FormControlText';
 import { FormControlAirport } from './FormControlAirport';
 import { FormControlDate } from './FormControlDate';
+import { RiDeleteBin6Line } from 'react-icons/ri';
+import { BsPlusLg } from 'react-icons/bs';
 
 export const ShowPassenger = ({ passenger, handlePassengerChange }) => {
 
@@ -26,7 +28,11 @@ export const ShowPassenger = ({ passenger, handlePassengerChange }) => {
 
 	return (
 		<div className="control_showPassenger">
-			<h2>{passenger.genericTitle}</h2>
+			<div className="header">
+				<h2>{passenger.genericTitle}</h2>
+				<BsPlusLg className="icon" />
+				<RiDeleteBin6Line className="icon" />
+			</div>
 			<FormControlText label="Name" text={passenger.name} handleChangeText={handleChangeName} />
 			<FormControlAirport label="From" airport={passenger.airport} handleChangeAirport={handleChangeAirport} />
 			<FormControlDate label="Start" date={passenger.start} handleChangeDate={handleChangeStart} />

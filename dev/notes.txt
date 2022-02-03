@@ -2,4 +2,7 @@
 	- x rename to formControlAirport
 - x separate title/name
 - x add start
-- .. add end
+- x add end
+- .. add icons for add and delete
+- implement add
+- implement delete

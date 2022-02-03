@@ -32,6 +32,17 @@ body {
 			padding: 20px;
 			margin: 0 10px 10px 0;
 			border-radius: 5px;
+			.header {
+				display: grid;
+				grid-template-columns: 455px 1fr 1fr;
+				grid-template-rows: 1fr;
+				gap: 0px 0px;
+				grid-template-areas: ". . .";
+				.icon {
+					font-size: 1.1rem;
+					color: #555;
+				}
+			}
 			h2 {
 				padding: 0;
 				margin: 0 0 10px 0;
